@@ -4,7 +4,7 @@ This GitHub repository contains a collection of tools and scripts for analysing 
 
 ## Features
 
-- Import and process FIA official race data from various sources, including full race laptime information for drivers and teams of interest.
+- Import and process FIA official race data, including full race laptime information for drivers and teams of interest.
 - Analyse laptime trends and key performance metrics.
 - Generate visualisations such as line plots, scatter plots, stacked area plots, and histograms to analyse race strategy and laptime data.
 - Compare and contrast different drivers' laptime performances to identify patterns and anomalies.

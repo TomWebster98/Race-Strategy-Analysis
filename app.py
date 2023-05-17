@@ -9,15 +9,6 @@ df = pd.read_csv('Laptime CSV Data/2023 MiamiGP LapTimes.csv')
 # Initialize the app
 app = Dash(__name__)
 
-# App layout
-# app.layout = html.Div([
-#     html.Div(children='My First App with Data and a graph'),
-#     dash_table.DataTable(data=df.to_dict('records'), page_size=10),
-#     dcc.Graph(figure=px.line(df, x='Lap', y='Laptime (s) MV')),
-#     dcc.Graph(figure=px.bar(df, x='Lap', y='Delta (s)')),
-#     dcc.Graph(figure=px.box(df, y='Laptime (s) MV'))
-# ])
-
 # Create box traces for Max Verstappen
 max_laptimes = df['Laptime (s) MV'].dropna()  # Remove any NaN values
 max_trace = go.Box(
@@ -58,72 +49,89 @@ delta_trace_area = go.Scatter(
     line=dict(color='rgba(255, 0, 0, 0)')
 )
 
-app.layout = html.Div(children=[
-    html.H1(children='Race Analysis'),
+# Define custom CSS styles for the app
+styles = {
+    'background': '#333333',  # Set background color to dark grey
+    'text-color': '#FFFFFF',  # Set text color to white
+    'title': {
+        'textAlign': 'center',
+        'color': '#FFFFFF',
+        'fontSize': '36px',
+        'padding': '20px'
+    }
+}
 
-    html.Div([
-        dcc.Graph(
-            id='lap-time-boxplot',
-            figure={
-                'data': [max_trace, sergio_trace],
-                'layout': go.Layout(
-                    title='Lap Time Comparison',
-                    yaxis=dict(title='Lap Time (s)'),
-                    boxmode='group',
-                    xaxis=dict(title='Drivers'),
-                    showlegend=True
-                )
-            }
-        )
-    ]),
+app.layout = html.Div(
+    className='app-container',
+    style={
+        'backgroundColor': styles['background'],
+        'border': 'none',
+        'padding': '0px',
+        'margin': '0px',
+        'outline': 'none'
+    },
+    children=[
+        html.H1(
+            children='Formula 1 Race Analysis',
+            style=styles['title']
+        ),
 
-    html.Div([
-        dcc.Graph(
-            id='time-delta-line',
-            figure={
-                'data': [delta_trace_line],
-                'layout': go.Layout(
-                    title='Time Delta (Line Plot)',
-                    yaxis=dict(title='Time Delta (s)'),
-                    xaxis=dict(title='Lap Number'),
-                    showlegend=True
-                )
-            }
-        )
-    ]),
+        html.Div([
+            dcc.Graph(
+                id='lap-time-boxplot',
+                figure={
+                    'data': [max_trace, sergio_trace],
+                    'layout': go.Layout(
+                        title='Lap Time Comparison',
+                        yaxis=dict(title='Lap Time (s)', gridcolor='white'),
+                        boxmode='group',
+                        xaxis=dict(title='Drivers', gridcolor='white'),
+                        showlegend=True,
+                        paper_bgcolor=styles['background'],
+                        plot_bgcolor=styles['background'],
+                        font=dict(color=styles['text-color'])
+                    )
+                }
+            )
+        ]),
 
-    html.Div([
-        dcc.Graph(
-            id='time-delta-area',
-            figure={
-                'data': [delta_trace_area],
-                'layout': go.Layout(
-                    title='Time Delta (Area Plot)',
-                    yaxis=dict(title='Time Delta (s)'),
-                    xaxis=dict(title='Lap Number'),
-                    showlegend=True
-                )
-            }
-        )
-    ])
-])
+        html.Div([
+            dcc.Graph(
+                id='time-delta-line',
+                figure={
+                    'data': [delta_trace_line],
+                    'layout': go.Layout(
+                        title='Time Delta (Line Plot)',
+                        yaxis=dict(title='Time Delta (s)', gridcolor='white'),
+                        xaxis=dict(title='Lap Number', gridcolor='white'),
+                        showlegend=True,
+                        paper_bgcolor=styles['background'],
+                        plot_bgcolor=styles['background'],
+                        font=dict(color=styles['text-color'])
+                    )
+                }
+            )
+        ]),
 
-# app.layout = html.Div(children=[
-#     html.H1(children='Race Lap Time Comparison'),
-
-#     dcc.Graph(
-#         id='lap-time-boxplot',
-#         figure={
-#             'data': [max_trace, sergio_trace],
-#             'layout': go.Layout(
-#                 title='Average Lap Time Comparison',
-#                 yaxis=dict(title='Lap Time (s)'),
-#                 boxmode='group',
-#                 xaxis=dict(title='Drivers')
-#             )
-#         }
-#     )
-# ])
+        html.Div([
+            dcc.Graph(
+                id='time-delta-area',
+                figure={
+                    'data': [delta_trace_area],
+                    'layout': go.Layout(
+                        title='Time Delta (Area Plot)',
+                        yaxis=dict(title='Time Delta (s)', gridcolor='white'),
+                        xaxis=dict(title='Lap Number', gridcolor='white'),
+                        showlegend=True,
+                        paper_bgcolor=styles['background'],
+                        plot_bgcolor=styles['background'],
+                        font=dict(color=styles['text-color'])
+                    )
+                }
+            )
+        ])
+    ]
+)
 
 if __name__ == '__main__':
     app.run_server(debug=True)

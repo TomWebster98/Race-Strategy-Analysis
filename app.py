@@ -12,8 +12,10 @@ app = Dash(__name__)
 # Create box traces for Max Verstappen
 max_laptimes = df['Laptime (s) MV'].dropna()  # Remove any NaN values
 max_trace = go.Box(
-    y=max_laptimes,
-    name='Max Verstappen',
+    x=max_laptimes,  # Set lap times as x-axis values
+    y=['Verstappen'] * len(max_laptimes),  # Set driver name as y-axis values
+    name='MAx Verstappen',
+    orientation='h',  # Set orientation to horizontal
     boxpoints='all',
     jitter=0.3,
     pointpos=-1.8,
@@ -22,8 +24,10 @@ max_trace = go.Box(
 # Create box traces for Sergio Perez
 sergio_laptimes = df['Laptime (s) SP'].dropna()  # Remove any NaN values
 sergio_trace = go.Box(
-    y=sergio_laptimes,
+    x=sergio_laptimes,  # Set lap times as x-axis values
+    y=['Perez'] * len(sergio_laptimes),  # Set driver name as y-axis values
     name='Sergio Perez',
+    orientation='h',  # Set orientation to horizontal
     boxpoints='all',
     jitter=0.3,
     pointpos=-1.8,
@@ -83,9 +87,9 @@ app.layout = html.Div(
                     'data': [max_trace, sergio_trace],
                     'layout': go.Layout(
                         title='Lap Time Comparison',
-                        yaxis=dict(title='Lap Time (s)', gridcolor='white'),
+                        xaxis=dict(title='Lap Time (s)', gridcolor='white'),
+                        yaxis=dict(title='Driver', gridcolor='white'),
                         boxmode='group',
-                        xaxis=dict(title='Drivers', gridcolor='white'),
                         showlegend=True,
                         paper_bgcolor=styles['background'],
                         plot_bgcolor=styles['background'],
@@ -101,7 +105,7 @@ app.layout = html.Div(
                 figure={
                     'data': [delta_trace_line],
                     'layout': go.Layout(
-                        title='Time Delta (Line Plot)',
+                        title='Time Delta (Perez to Verstappen)',
                         yaxis=dict(title='Time Delta (s)', gridcolor='white'),
                         xaxis=dict(title='Lap Number', gridcolor='white'),
                         showlegend=True,
@@ -112,24 +116,6 @@ app.layout = html.Div(
                 }
             )
         ]),
-
-        html.Div([
-            dcc.Graph(
-                id='time-delta-area',
-                figure={
-                    'data': [delta_trace_area],
-                    'layout': go.Layout(
-                        title='Time Delta (Area Plot)',
-                        yaxis=dict(title='Time Delta (s)', gridcolor='white'),
-                        xaxis=dict(title='Lap Number', gridcolor='white'),
-                        showlegend=True,
-                        paper_bgcolor=styles['background'],
-                        plot_bgcolor=styles['background'],
-                        font=dict(color=styles['text-color'])
-                    )
-                }
-            )
-        ])
     ]
 )
 

@@ -2,6 +2,7 @@ from dash import Dash, html, dash_table, dcc
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
+import numpy as np
 
 # Load lap time data into a Pandas DataFrame
 df = pd.read_csv('Laptime CSV Data/2023 MiamiGP LapTimes.csv')
@@ -14,11 +15,12 @@ max_laptimes = df['Laptime (s) MV'].dropna()  # Remove any NaN values
 max_trace = go.Box(
     x=max_laptimes,  # Set lap times as x-axis values
     y=['Verstappen'] * len(max_laptimes),  # Set driver name as y-axis values
-    name='MAx Verstappen',
+    name='Max Verstappen',
     orientation='h',  # Set orientation to horizontal
     boxpoints='all',
     jitter=0.3,
     pointpos=-1.8,
+    marker_color='orange',
 )
 
 # Create box traces for Sergio Perez
@@ -31,15 +33,33 @@ sergio_trace = go.Box(
     boxpoints='all',
     jitter=0.3,
     pointpos=-1.8,
+    marker_color='darkgreen',
 )
 
 # Create line trace for time delta between Max and Sergio
 delta_trace_line = go.Scatter(
-    x=df.index,
+    x=df['Lap'],
     y=df['Delta (s)'],
     mode='lines',
-    name='Time Delta (Perez to Verstappen)',
-    line=dict(color='yellow')
+    name='Time Delta (Line)',
+    line=dict(color='lightblue'),
+)
+
+# Create line graph for lap times comparison
+lap_times_trace_max = go.Scatter(
+    x=df['Lap'],
+    y=df['Laptime (s) MV'],
+    mode='lines',
+    name='Max Verstappen',
+    line=dict(color='orange')
+)
+
+lap_times_trace_sergio = go.Scatter(
+    x=df['Lap'],
+    y=df['Laptime (s) SP'],
+    mode='lines',
+    name='Sergio Perez',
+    line=dict(color='darkgreen')
 )
 
 # Define custom CSS styles for the app
@@ -97,6 +117,24 @@ app.layout = html.Div(
                         title='Time Delta (Perez to Verstappen)',
                         yaxis=dict(title='Time Delta (s)', gridcolor='white'),
                         xaxis=dict(title='Lap Number', gridcolor='white'),
+                        showlegend=True,
+                        paper_bgcolor=styles['background'],
+                        plot_bgcolor=styles['background'],
+                        font=dict(color=styles['text-color'])
+                    )
+                }
+            )
+        ]),
+
+        html.Div([
+            dcc.Graph(
+                id='lap-times-line',
+                figure={
+                    'data': [lap_times_trace_max, lap_times_trace_sergio],
+                    'layout': go.Layout(
+                        title='Lap Times Comparison',
+                        xaxis=dict(title='Lap Number', gridcolor='white'),
+                        yaxis=dict(title='Lap Time (s)', gridcolor='white'),
                         showlegend=True,
                         paper_bgcolor=styles['background'],
                         plot_bgcolor=styles['background'],

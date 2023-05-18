@@ -38,19 +38,8 @@ delta_trace_line = go.Scatter(
     x=df.index,
     y=df['Delta (s)'],
     mode='lines',
-    name='Time Delta (Line)',
-    line=dict(color='red')
-)
-
-# Create area trace for time delta between Max and Sergio
-delta_trace_area = go.Scatter(
-    x=df.index,
-    y=df['Delta (s)'],
-    mode='lines',
-    fill='tozeroy',
-    fillcolor='rgba(255, 0, 0, 0.2)',
-    name='Time Delta (Area)',
-    line=dict(color='rgba(255, 0, 0, 0)')
+    name='Time Delta (Perez to Verstappen)',
+    line=dict(color='yellow')
 )
 
 # Define custom CSS styles for the app

@@ -2,13 +2,13 @@ from dash import Dash, html, dash_table, dcc
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
-import numpy as np
+import dash_bootstrap_components as dbc
 
 # Load lap time data into a Pandas DataFrame
 df = pd.read_csv('Laptime CSV Data/2023 MiamiGP LapTimes.csv')
 
 # Initialize the app
-app = Dash(__name__)
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUX])
 
 # Create box traces for Max Verstappen
 max_laptimes = df['Laptime (s) MV'].dropna()  # Remove any NaN values
@@ -97,7 +97,7 @@ app.layout = html.Div(
                     'layout': go.Layout(
                         title='Lap Time Comparison',
                         xaxis=dict(title='Lap Time (s)', gridcolor='white'),
-                        yaxis=dict(title='Driver', gridcolor='white'),
+                        yaxis=dict(title='Driver', gridcolor='white', showgrid=False),
                         boxmode='group',
                         showlegend=True,
                         paper_bgcolor=styles['background'],
@@ -115,12 +115,20 @@ app.layout = html.Div(
                     'data': [delta_trace_line],
                     'layout': go.Layout(
                         title='Time Delta (Perez to Verstappen)',
-                        yaxis=dict(title='Time Delta (s)', gridcolor='white'),
-                        xaxis=dict(title='Lap Number', gridcolor='white'),
+                        yaxis=dict(title='Time Delta (s)', gridcolor='white', zeroline=True, zerolinewidth=2, zerolinecolor='red'),
+                        xaxis=dict(title='Lap Number', gridcolor='white', showspikes=True, # Show spike line for X-axis
+                            # Format spike
+                            spikethickness=2,
+                            spikedash="dot",
+                            spikecolor="#999999",
+                            spikemode="across"),
                         showlegend=True,
                         paper_bgcolor=styles['background'],
                         plot_bgcolor=styles['background'],
-                        font=dict(color=styles['text-color'])
+                        font=dict(color=styles['text-color']),
+                        hovermode="x",
+                        hoverdistance=100, # Distance to show hover label of data point
+                        spikedistance=1000, # Distance to show spike
                     )
                 }
             )
@@ -133,13 +141,20 @@ app.layout = html.Div(
                     'data': [lap_times_trace_max, lap_times_trace_sergio],
                     'layout': go.Layout(
                         title='Lap Times Comparison',
-                        xaxis=dict(title='Lap Number', gridcolor='white'),
+                        xaxis=dict(title='Lap Number', gridcolor='white', showspikes=True, # Show spike line for X-axis
+                            # Format spike
+                            spikethickness=2,
+                            spikedash="dot",
+                            spikecolor="#999999",
+                            spikemode="across"),
                         yaxis=dict(title='Lap Time (s)', gridcolor='white'),
                         showlegend=True,
                         paper_bgcolor=styles['background'],
                         plot_bgcolor=styles['background'],
-                        font=dict(color=styles['text-color'])
-                    )
+                        font=dict(color=styles['text-color']),
+                        hovermode="x",
+                        hoverdistance=100, # Distance to show hover label of data point
+                        spikedistance=1000) # Distance to show spike
                 }
             )
         ]),

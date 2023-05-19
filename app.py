@@ -36,6 +36,54 @@ sergio_trace = go.Box(
     marker_color='darkgreen',
 )
 
+# Creating box traces for Hard and Medium stint of Max Verstappen
+max_hards = df['Laptime (s) MV'].iloc[1:45].dropna()
+max_hards_trace = go.Box(
+    x=max_hards,  # Set lap times as x-axis values
+    y=['Verstappen'] * len(max_hards),  # Set driver name as y-axis values
+    name='Max Verstappen',
+    orientation='h',  # Set orientation to horizontal
+    boxpoints='all',
+    jitter=0.3,
+    pointpos=-1.8,
+    marker_color='orange',
+)
+max_mediums = df['Laptime (s) MV'].iloc[46:57].dropna()
+max_mediums_trace = go.Box(
+    x=max_mediums,  # Set lap times as x-axis values
+    y=['Verstappen'] * len(max_mediums),  # Set driver name as y-axis values
+    name='Max Verstappen',
+    orientation='h',  # Set orientation to horizontal
+    boxpoints='all',
+    jitter=0.3,
+    pointpos=-1.8,
+    marker_color='orange',
+)
+
+# Creating box traces for Hard and Medium stint of Sergio Perez 
+sergio_hards = df['Laptime (s) SP'].iloc[21:57].dropna()
+sergio_hards_trace = go.Box(
+    x=sergio_hards,  # Set lap times as x-axis values
+    y=['Perez'] * len(sergio_hards),  # Set driver name as y-axis values
+    name='Sergio Perez',
+    orientation='h',  # Set orientation to horizontal
+    boxpoints='all',
+    jitter=0.3,
+    pointpos=-1.8,
+    marker_color='darkgreen',
+)
+sergio_mediums = df['Laptime (s) SP'].iloc[1:20].dropna()
+sergio_mediums_trace = go.Box(
+    x=sergio_mediums,  # Set lap times as x-axis values
+    y=['Perez'] * len(sergio_mediums),  # Set driver name as y-axis values
+    name='Sergio Perez',
+    orientation='h',  # Set orientation to horizontal
+    boxpoints='all',
+    jitter=0.3,
+    pointpos=-1.8,
+    marker_color='darkgreen',
+)
+
 # Create line trace for time delta between Max and Sergio
 delta_trace_line = go.Scatter(
     x=df['Lap'],
@@ -96,6 +144,44 @@ app.layout = html.Div(
                     'data': [max_trace, sergio_trace],
                     'layout': go.Layout(
                         title='Lap Time Comparison',
+                        xaxis=dict(title='Lap Time (s)', gridcolor='white'),
+                        yaxis=dict(title='Driver', gridcolor='white', showgrid=False),
+                        boxmode='group',
+                        showlegend=True,
+                        paper_bgcolor=styles['background'],
+                        plot_bgcolor=styles['background'],
+                        font=dict(color=styles['text-color'])
+                    )
+                }
+            )
+        ]),
+
+        html.Div([
+            dcc.Graph(
+                id='hards-lap-time-boxplot',
+                figure={
+                    'data': [max_hards_trace, sergio_hards_trace],
+                    'layout': go.Layout(
+                        title='Hard Tyre Lap Time Comparison',
+                        xaxis=dict(title='Lap Time (s)', gridcolor='white'),
+                        yaxis=dict(title='Driver', gridcolor='white', showgrid=False),
+                        boxmode='group',
+                        showlegend=True,
+                        paper_bgcolor=styles['background'],
+                        plot_bgcolor=styles['background'],
+                        font=dict(color=styles['text-color'])
+                    )
+                }
+            )
+        ]),
+
+        html.Div([
+            dcc.Graph(
+                id='mediums-lap-time-boxplot',
+                figure={
+                    'data': [max_mediums_trace, sergio_mediums_trace],
+                    'layout': go.Layout(
+                        title='Medium Tyre Lap Time Comparison',
                         xaxis=dict(title='Lap Time (s)', gridcolor='white'),
                         yaxis=dict(title='Driver', gridcolor='white', showgrid=False),
                         boxmode='group',

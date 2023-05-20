@@ -1,19 +1,22 @@
 # Formula 1 Race Strategy Analysis and Visualisations
 
-This GitHub repository contains a collection of tools and scripts for analysing and visualising Formula 1 race strategy and laptime data. The project aims to provide insights into race strategies employed by Formula 1 teams and aid in understanding laptime patterns throughout the race.
+This GitHub repository contains a collection of scripts for analysing and visualising Formula 1 race strategy and laptime data. I have developed these tools to facilitate my own race strategy analysis. This project aims to provide insights into race strategies employed by Formula 1 teams and aid in understanding laptime patterns throughout the race.
+
+See the full list of my *"What Made the Difference?"* strategy reports [here](/What%20Made%20The%20Difference/).
 
 ## Features
 
-- Import and process FIA official race data, including full race laptime information for drivers and teams of interest.
-- Analyse laptime trends and key performance metrics.
-- Generate visualisations such as line plots, scatter plots, stacked area plots, and histograms to analyse race strategy and laptime data.
-- Compare and contrast different drivers' laptime performances to identify patterns and anomalies.
-- Calculate and visualize cumulative lap times for individual drivers across the race.
-- Perform statistical analysis and derive valuable insights for race strategy optimisation.
+Using the Dash and plotly Python modules, the scripts in this repository produce interactive graphs that are viewed on Dash apps.
 
-## Blogs & Reports
+These scripts are able to:
+- Import and process FIA official race data, including full race laptime information for drivers and teams of interest.
+- Generate visualisations such as box plots, line plots, scatter plots, stacked area plots, histograms and more, to show race strategy and laptime data.
+- Display data visualisations on an interactive Dash app.
+
+## Blogs & Reports: *What Made the Difference?*
 
 - Concise summaries of core strategic decisions that effect race results.
+- Identifying specific tyre stints that led to the final race outcome.
 - Hypotheses as to potential external factors or alternative decisions could have impacted the race significantly.
 
 ## Introduction to Race Strategy

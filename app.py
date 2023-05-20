@@ -5,7 +5,7 @@ import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
 
 # Load lap time data into a Pandas DataFrame
-df = pd.read_csv('Laptime CSV Data/2023 MiamiGP LapTimes.csv')
+df = pd.read_csv('Laptime CSV Data/2023 Season/MiamiGP/2023 MiamiGP LapTimes.csv')
 
 # Initialize the app
 app = Dash(__name__, external_stylesheets=[dbc.themes.LUX])
@@ -143,7 +143,7 @@ app.layout = html.Div(
                 figure={
                     'data': [max_trace, sergio_trace],
                     'layout': go.Layout(
-                        title='Lap Time Comparison',
+                        title='Full Race Lap Time Comparison',
                         xaxis=dict(title='Lap Time (s)', gridcolor='white'),
                         yaxis=dict(title='Driver', gridcolor='white', showgrid=False),
                         boxmode='group',
@@ -201,7 +201,7 @@ app.layout = html.Div(
                     'data': [delta_trace_line],
                     'layout': go.Layout(
                         title='Time Delta (Perez to Verstappen)',
-                        yaxis=dict(title='Time Delta (s)', gridcolor='white', zeroline=True, zerolinewidth=2, zerolinecolor='red'),
+                        yaxis=dict(title='Time Delta (s)', gridcolor='white', zeroline=True, zerolinewidth=2, zerolinecolor='darkred'),
                         xaxis=dict(title='Lap Number', gridcolor='white', showspikes=True, # Show spike line for X-axis
                             # Format spike
                             spikethickness=2,

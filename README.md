@@ -1,5 +1,7 @@
 # Formula 1 Race Strategy Analysis and Visualisations
 
+*Project Start Date: May 2023*
+
 This GitHub repository contains a collection of scripts for analysing and visualising Formula 1 race strategy and laptime data. I have developed these tools to facilitate my own race strategy analysis. This project aims to provide insights into race strategies employed by Formula 1 teams and aid in understanding laptime patterns throughout the race.
 
 See the full list of my *"What Made the Difference?"* strategy reports [here](/What%20Made%20The%20Difference/).

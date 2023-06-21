@@ -8,12 +8,12 @@ See the full list of my *"What Made the Difference?"* strategy reports [here](/W
 
 ## Features
 
-Using the Dash and plotly Python modules, the scripts in this repository produce interactive graphs that are viewed on Dash apps.
+Using either MATLAB or the Dash and plotly Python modules, the scripts in this repository produce interactive graphs that are viewed in MATLAB or on Dash apps.
 
 These scripts are able to:
 - Import and process FIA official race data, including full race laptime information for drivers and teams of interest.
-- Generate visualisations such as box plots, line plots, scatter plots, stacked area plots, histograms and more, to show race strategy and laptime data.
-- Display data visualisations on an interactive Dash app.
+- Generate visualisations to show race strategy and laptime data as appropriate.
+- Display data visualisations in the interactive MATLAB user interface, or on an interactive Dash app in the case of the Python scripts.
 
 ## Blogs & Reports: *What Made the Difference?*
 

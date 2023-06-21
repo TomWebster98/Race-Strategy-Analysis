@@ -1,4 +1,4 @@
-# *What Made the Difference?* MonacoGP: Verstappen vs Alonso and The Fight for Third
+# *What Made the Difference?* MonacoGP: Verstappen vs Alonso
 
 ## Qualifying
 

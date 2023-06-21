@@ -36,4 +36,30 @@ In short, no. Max was able to hold on to P1 for the entire duration of the Grand
 
 Starting on the medium tyre, Verstappen would aim to get off the line well and hold the lead into turn 1, before pulling a comfortable gap (over 3 seconds) such that Red Bull could react to any undercut attempts from Alonso and the other drivers behind. Meanwhile, Alonso would aim to hold on to Verstappen's pace as much as possible in the opening stint, remaining within range to execute an undercut or overcut as appropriate. Equally, with the prospect of rain late in the race having more durable tyres to hold on until such a time as intermediate or wet tyres were needed, provided more flexibility in pit window than those starting on softer tyres, and therefore potentially requiring one less pit stop and gaining track position - the key to winning in Monaco.
 
+![Race Delta](/Data%20Visualisations/2023%20Season/MonacoGP/MonacoGP_Race_Delta.png)
+
+As can be seen in the graph above, showing the time delta to Verstappen for each lap of the race, Alonso dropped back by a small margin each lap until lap 10, after which the delta increased at a greater rate until a peak of around 12 seconds on lap 24 where it remained constant for 3 laps, before decreasing again. During this phase of the opening stint, the graining on Verstappen's medium compound tyres hindered his pace for a further 6 laps as Alonso closed the gap to just 5.8 seconds on lap 33. As is often observed with the current generation of Pirelli tyres in Formula 1, this graining phase of the tyre cleared up, and unlocked additional pace in the tyre once more. With Hamilton and Ocon pitting on laps 31 and 32 respectively, it was down to Alonso and Verstappen to hold on as long as possible and with reasonable pace, to ensure they could execute a pit stop without falling back into trafffic, or having to complete an extra stop if the rain eventually fell.
+
+![Race Laptimes](/Data%20Visualisations/2023%20Season/MonacoGP/MonacoGP_Race_Laptimes.png)
+
+As it happened, the rain came on lap 51 in the form of a highly localised shower in the first few corners of sector 2.
+
 ## Navigating the Weather Change
+
+With rain falling in sector 2, but completely dry sectors 1 and 3, choosing the correct crossover point to switch to intermediate tyres is vital; switch too early and the tyres would overheat and lose traction in the dry sections of the track, but stay out for too long on older, harder compound slick tyres and the risk of an incident and greater time loss increases. Since teams utlilise driver feedback, tyre temperatures, lap times and radar information to adjust strategy decisions in accordance with changing conditions, the next few laps were a frenzy of activity on the radio channels and on the pit wall. With radar imagery showing light rain in sector 2, heavier pockets of rain in the surrounding areas, and clear areas inbetween, there were plenty of traps to fall in by making th eincorrect decision.
+
+Aston Martin tested the intermediate tyres first with Stroll, and having not seen suitable laptime data, or perhaps expecting the rain to clear up quickly, elected to stop Alonso for the medium compound tyre on lap 54, while Verstappen remained on the medium tyre he started the race with. Having exited the pits and approaching sector 2 on lap 55, it became clear that Aston Martin had made the incorrect call, and they should have fitted the intermediate tyre. Having made the assessment they were using the wrong tyre for the current weather conditions, Alonso would pit again on lap 55, this time for the intermediate. It was also on lap 55 that Verstappen would fit the intermediate tyres for the remainder of the race. 
+
+## What Enabled this Result?
+
+- While Verstappen demonstrated superior pace in the opening stint of the race, despite a minor period of graining on the medium tyre, Red Bull were granted increased breathing room in their strategic decision making for the pit stop window where they could comfortably cover off any undercut attempts.
+
+- Aston Martin's ill advised stop for medium tyres on lap 54, leading to an additional stop on lap 55 for Alonso and falling over 20 seconds behind Verstappen. With this mistake, the victory was secured for Red Bull and Verstappen as long as no major incident occurred. 
+
+## What Could Have Changed the Result?
+
+- If Aston Martin had fitted the intermediate tyre for Alonso on lap 54, as would have been the correct decision looking back, Alonso may have had a suitable opportunity to close the 13 second gap and push on in the final stint of the race with a head-to-head sprint with Verstappen.
+
+- If Hamilton and Ocon had suitable pace in the early phase of the Grand Prix and remained close enough to Verstappen and Alonso, such that their pit stops on lap 31 and 32 from medium to hard tyres posed a legitimate undercut threat to Verstappen, then Red Bull may have been inclined to cover off this threat with an early pit stop of their own on lap 32 or 33, thus affording track position to Alonso who would have then had a chance to execute an overcut with the hard tyre before changing to fresh mediums in the final stages of the race.
+
+- If Alonso remained closer to Verstappen in the early stages of the race, the graining on Verstappen's medium tyres may have left him vulnerable between laps 24 and 33, or led him to incorrectly manage this tyre phase, and thus become vulnerable later in the stint, perhaps provoking an earlier pit stop before the rain period.

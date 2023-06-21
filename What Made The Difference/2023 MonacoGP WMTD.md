@@ -24,6 +24,16 @@ The cumulative laptime delta to Verstappen, for Alonso, Leclerc, and Ocon is sho
 
 ![Lap Time Delta](/Data%20Visualisations/2023%20Season/MonacoGP/MonacoGP_Qualifying_OptimDelta.png)
 
+## Race Context & Result
+
+Lining up on the front row of the grid, Alonso starting on the hard tyre behind Verstappen on the medium compound, the prospect of a strategic battle at the Monaco Grand Prix was fascinating. Verstappen would have better pace initially on the softer of the two tyres compared to Alonso, but Alonso would have greater flexibility in pit window due to the increased durability of the hard tyre relative to the medium compound. Starting Max on the faster tyre improves his chances of securing a good race start and getting off the line quickly to lead out of turn 1, an essential part of winning in Monaco given the restrictions on overtaking opportunities. Starting Alonso on the more durable tyre compound provides strategic flexibility, meaning Aston Martin can make their mandatory pit stop further into the race duration, useful when holding out for an expected weather change, taking advantage of a wider safety car window, or even executing an overcut and minimising the time loss from running behind slower cars after pitting.
+
+*So did this srategic plan pay-off for Aston Marting and Alonso?*
+
+In short, no. Max was able to hold on to P1 for the entire duration of the Grand Prix and claim the victory by over 27 seconds to Alonso in P2. But this result didn't come about without a significant number of traps and challenges that required careful strategic navigation. 
+
 ## Strategy Overview
+
+Starting on the medium tyre, Verstappen would aim to get off the line well and hold the lead into turn 1, before pulling a comfortable gap (over 3 seconds) such that Red Bull could react to any undercut attempts from Alonso and the other drivers behind. Meanwhile, Alonso would aim to hold on to Verstappen's pace as much as possible in the opening stint, remaining within range to execute an undercut or overcut as appropriate. Equally, with the prospect of rain late in the race having more durable tyres to hold on until such a time as intermediate or wet tyres were needed, provided more flexibility in pit window than those starting on softer tyres, and therefore potentially requiring one less pit stop and gaining track position - the key to winning in Monaco.
 
 ## Navigating the Weather Change

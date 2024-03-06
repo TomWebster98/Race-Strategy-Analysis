@@ -31,4 +31,4 @@
 
 - Despite an opening lap incident, Hulkenberg was able to undercut Gasly at the final pitstop and overtake Ocon on track in the final stint.
 
-- Botta had an issue during the second pitstop and dropped out of the battle with the two Alpines.
+- Bottas had an issue during the second pitstop and dropped out of the battle with the two Alpines.

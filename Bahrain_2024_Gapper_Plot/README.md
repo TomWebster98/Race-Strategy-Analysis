@@ -1,5 +1,7 @@
 # Bahrain 2024 Gapper Plot Race Summary
 
+![Bahrain 2024 Gapper Plot](/Bahrain_2024_Gapper_Plot/Bahrain_2024_Gapper_Plot_Reference_Time.png)
+
 ## Front-Runners
 - Verstappen was able to run the longest first stint of the race, and completed it with the fastest average pace.
 

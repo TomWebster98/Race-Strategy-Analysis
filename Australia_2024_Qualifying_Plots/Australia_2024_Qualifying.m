@@ -38,7 +38,7 @@ xlabel("Lap Number")
 ylabel("Time Delta to Previous Qualifying Lap (s)")
 set ( gca, 'YDir', 'reverse' )
 grid on
-xlim([2,7])
+xlim([2,8])
 xticks(1:1:10)
 legend(["VER", "PER", "LEC", "SAI", "NOR", "PIA", "RUS", "TSU", ...
     "ALO", "STR"],"Location","northeast");

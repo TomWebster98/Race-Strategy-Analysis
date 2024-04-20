@@ -12,7 +12,7 @@ fuelCorrectionFactor = fuelConsumption .* timePerKg; %seconds/lap
 
 fuelLapCorrections = fuelCorrectionFactor .* (lapNumber-1);
 
-%% Defining Tyre Wear Factors
+%% Defining Arbitrary Tyre Wear Factors
 
 C3Wear = linspace(0.04,0.2,totalLapNumber); %0.02;
 C2Wear = linspace(0.04,0.12,totalLapNumber); %0.01;
@@ -31,13 +31,6 @@ C2DegLaptime = C2InitialLaptime + (C2Wear .* (tyreAge-1));
 
 C3laptime = C3InitialLaptime + (C3Wear .* (tyreAge-1)) - fuelLapCorrections(lapNumber);
 C2laptime = C2InitialLaptime + (C2Wear .* (tyreAge-1)) - fuelLapCorrections(lapNumber);
-
-%%
-% To determine fuel corrected laptimes for individual stints, the following 
-% formula is appropriate:
-
-% Fuel_Corrected_Stint_Formula = TyreDegLaptime(tyreAge(1:end_of_stint)) 
-% - fuelLapCorrections(lapNumber(stint_start_lap:stint_end_lap))
 
 %% Defining Average Pit Time Loss
 
@@ -65,8 +58,7 @@ hold off
 % Objective (minimise over 56 laps) raceTime = total lap times (including pit time).
 
 % Establish the logic such that we can choose to stop at any point, and 
-% only once, at which point the tyreAge returns to 1. (Expect therefore the
-% optimal stop to be at the half way point of the race).
+% only once, at which point the tyreAge returns to 1.
 
 raceTimesArray = zeros(1,length(totalLapNumber)-1);
 
